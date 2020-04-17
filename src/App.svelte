@@ -41,6 +41,9 @@
 </script>
 
 <style>
+	* {
+		font-family: Arial, Helvetica, sans-serif;
+	}
 	#button {
 		position: fixed;
 		top: calc(50% - 1.5em - 1px);
