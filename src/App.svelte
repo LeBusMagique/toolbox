@@ -2,17 +2,48 @@
 
 <script>
 
+	import { onMount } from 'svelte';
+
 	let show = false;
+	let lastRssTitle = false;
+	let lastRssUrl = false;
 
 	function toggleToolbar() {
 		show = !show;
+	}
+
+	onMount(() => {
+		loadXMLDoc();
+	});
+
+	function loadXMLDoc() {
+	  var xmlhttp = new XMLHttpRequest();
+	  xmlhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	      readXMLDoc(this);
+	    }
+	  };
+	  xmlhttp.open("GET", "https://www.lebusmagique.fr/blog/do/rss.xml", true);
+	  xmlhttp.send();
+	}
+
+	function readXMLDoc(xml) {
+	  var x, y, xmlDoc, title, url;
+	  xmlDoc = xml.responseXML;
+	  x = xmlDoc.getElementsByTagName("title");
+	  y = xmlDoc.getElementsByTagName("link");
+		title = x[1].childNodes[0].nodeValue;
+		url = y[1].childNodes[0].nodeValue;
+		lastRssTitle = (typeof(title) !== 'undefined') ? title : false;
+		lastRssUrl = (typeof(url) !== 'undefined') ? url : false;
+
 	}
 </script>
 
 <style>
 	#button {
 		position: fixed;
-		top: 10%;
+		top: calc(50% - 1.5em - 1px);
 		left: 0;
 		z-index: 10001;
 		width: 3em;
@@ -107,6 +138,8 @@
 		border-radius: 4px;
 		box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 		border: 2px solid #fff;
+		padding: .75em 1em;
+		box-sizing: border-box;
 	}
 
 	#tools li a span {
@@ -136,6 +169,12 @@
 	    grid-column: span 1;
 		}
 	}
+
+	#tools li.rss a {
+		background: none;
+		border: 0;
+		box-shadow: none;
+	}
 </style>
 
 <a on:click="{toggleToolbar}" id="button" href="#!">
@@ -150,7 +189,12 @@
 	<div id="overlay">
 		<div id="wrap">
 			<ul id="tools">
-				<li class="large"><a href="#!" target="_blank"><span class="title">Site principal</span></a></li>
+				<li class="large">
+					<a href="https://www.lebusmagique.fr" target="_self">
+						<span class="title">Le Bus Magique</span>
+						<span class="subtitle">&laquo; Retourner au site principal</span>
+						</a>
+				</li>
 				<li><a href="#!" target="_blank"><span class="title">Outil 1</span></a></li>
 				<li class="high">
 					<a href="#!" target="_blank">
@@ -169,7 +213,14 @@
 				<li><a href="#!" target="_blank"><span class="title">Outil 6</span></a></li>
 				<li><a href="#!" target="_blank"><span class="title">Outil 7</span></a></li>
 				<li><a href="#!" target="_blank"><span class="title">Outil 8</span></a></li>
-				<li class="large"><a href="#!" target="_blank"><span class="title">RSS</span></a></li>
+				{#if lastRssTitle && lastRssUrl}
+					<li class="large rss">
+						<a href="{lastRssUrl}" target="_blank">
+							<span class="title">{lastRssTitle}</span>
+							<span class="subtitle">&uarr; Dernier article publié sur notre site &uarr;</span>
+						</a>
+					</li>
+				{/if}
 			</ul>
 		</div>
 	</div>
