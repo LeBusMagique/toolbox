@@ -1,6 +1,7 @@
 <svelte:options tag="lbm-toolbar" accessors={false} />
 
 <script>
+
 	let show = false;
 
 	function toggleToolbar() {
@@ -9,7 +10,7 @@
 </script>
 
 <style>
-	a#button {
+	#button {
 		position: fixed;
 		top: 10%;
 		left: 0;
@@ -18,13 +19,26 @@
 		height: 3em;
 		display: flex;
 		border-radius: 0 4px 4px 0;
-		border: 0;
 		background: #fff;
-		box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 		padding: 0;
 		cursor: pointer;
 		align-items: center;
 		justify-content: center;
+		background: #f44336;
+		color: #fff;
+		fill: #fff;
+		box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+		border: 2px solid #fff;
+    border-left: 0;
+	}
+
+	#button svg {
+		width: 1em;
+		color: #fff;
+	}
+
+	#button svg.big {
+		width: 1.5em;
 	}
 
 	#overlay {
@@ -37,6 +51,7 @@
 		left: 0;
 		right: 0;
 		z-index: 10000;
+		overflow-y: auto;
 	}
 
 	#wrap {
@@ -44,6 +59,7 @@
 		align-items: center;
 		justify-content: center;
 		height: 100%;
+		min-height: 700px;
 	}
 
 	#tools {
@@ -87,8 +103,11 @@
 		align-items: center;
 		justify-content: center;
 		flex-wrap: wrap;
-		background: red;
+		background: #f44336;
 		border-radius: 4px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+		border: 2px solid #fff;
+    border-left: 0;
 	}
 
 	#tools li a span {
@@ -101,34 +120,32 @@
 		font-weight: normal;
 		font-size: .8em;
 	}
+
+	@media screen and (max-width: 600px) {
+		#tools {
+		  grid-template-columns: repeat(1, 1fr);
+			grid-template-rows: repeat(10, 1fr);
+		}
+
+		#tools li.high {
+			grid-row: span 1;
+	    grid-column: span 1;
+		}
+
+		#tools li.large {
+			grid-row: span 1;
+	    grid-column: span 1;
+		}
+	}
 </style>
 
-<a on:click="{toggleToolbar}" id="button">
+<a on:click="{toggleToolbar}" id="button" href="#!">
 	{#if show}
-		&times;
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"/></svg>
 	{:else}
-		LBM
+		<svg class="big" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M502.63 214.63l-45.25-45.25c-6-6-14.14-9.37-22.63-9.37H384V80c0-26.51-21.49-48-48-48H176c-26.51 0-48 21.49-48 48v80H77.25c-8.49 0-16.62 3.37-22.63 9.37L9.37 214.63c-6 6-9.37 14.14-9.37 22.63V320h128v-16c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v16h128v-16c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v16h128v-82.75c0-8.48-3.37-16.62-9.37-22.62zM320 160H192V96h128v64zm64 208c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-16H192v16c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-16H0v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96H384v16z"/></svg>
 	{/if}
 </a>
-
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit est fugiat eaque, deleniti ducimus ut autem quibusdam ab voluptatibus optio nemo nulla? Repellat iste ab rem, quia doloremque reiciendis saepe!</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit est fugiat eaque, deleniti ducimus ut autem quibusdam ab voluptatibus optio nemo nulla? Repellat iste ab rem, quia doloremque reiciendis saepe!</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit est fugiat eaque, deleniti ducimus ut autem quibusdam ab voluptatibus optio nemo nulla? Repellat iste ab rem, quia doloremque reiciendis saepe!</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit est fugiat eaque, deleniti ducimus ut autem quibusdam ab voluptatibus optio nemo nulla? Repellat iste ab rem, quia doloremque reiciendis saepe!</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit est fugiat eaque, deleniti ducimus ut autem quibusdam ab voluptatibus optio nemo nulla? Repellat iste ab rem, quia doloremque reiciendis saepe!</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit est fugiat eaque, deleniti ducimus ut autem quibusdam ab voluptatibus optio nemo nulla? Repellat iste ab rem, quia doloremque reiciendis saepe!</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit est fugiat eaque, deleniti ducimus ut autem quibusdam ab voluptatibus optio nemo nulla? Repellat iste ab rem, quia doloremque reiciendis saepe!</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit est fugiat eaque, deleniti ducimus ut autem quibusdam ab voluptatibus optio nemo nulla? Repellat iste ab rem, quia doloremque reiciendis saepe!</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit est fugiat eaque, deleniti ducimus ut autem quibusdam ab voluptatibus optio nemo nulla? Repellat iste ab rem, quia doloremque reiciendis saepe!</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit est fugiat eaque, deleniti ducimus ut autem quibusdam ab voluptatibus optio nemo nulla? Repellat iste ab rem, quia doloremque reiciendis saepe!</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit est fugiat eaque, deleniti ducimus ut autem quibusdam ab voluptatibus optio nemo nulla? Repellat iste ab rem, quia doloremque reiciendis saepe!</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit est fugiat eaque, deleniti ducimus ut autem quibusdam ab voluptatibus optio nemo nulla? Repellat iste ab rem, quia doloremque reiciendis saepe!</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit est fugiat eaque, deleniti ducimus ut autem quibusdam ab voluptatibus optio nemo nulla? Repellat iste ab rem, quia doloremque reiciendis saepe!</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit est fugiat eaque, deleniti ducimus ut autem quibusdam ab voluptatibus optio nemo nulla? Repellat iste ab rem, quia doloremque reiciendis saepe!</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit est fugiat eaque, deleniti ducimus ut autem quibusdam ab voluptatibus optio nemo nulla? Repellat iste ab rem, quia doloremque reiciendis saepe!</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit est fugiat eaque, deleniti ducimus ut autem quibusdam ab voluptatibus optio nemo nulla? Repellat iste ab rem, quia doloremque reiciendis saepe!</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit est fugiat eaque, deleniti ducimus ut autem quibusdam ab voluptatibus optio nemo nulla? Repellat iste ab rem, quia doloremque reiciendis saepe!</p>
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit est fugiat eaque, deleniti ducimus ut autem quibusdam ab voluptatibus optio nemo nulla? Repellat iste ab rem, quia doloremque reiciendis saepe!</p>
 
 {#if show}
 	<div id="overlay">
