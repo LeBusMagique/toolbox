@@ -1,4 +1,4 @@
-<svelte:options tag="lbm-toolbar" accessors={false} />
+<svelte:options tag="lbm-toolbox" accessors={false} />
 
 <script>
 
@@ -107,7 +107,6 @@
 		border-radius: 4px;
 		box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 		border: 2px solid #fff;
-    border-left: 0;
 	}
 
 	#tools li a span {
