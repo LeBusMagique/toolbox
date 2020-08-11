@@ -198,24 +198,36 @@
 						<span class="subtitle">&laquo; Retourner au site principal</span>
 						</a>
 				</li>
-				<li><a href="#!" target="_blank"><span class="title">Outil 1</span></a></li>
+				<li><a href="https://www.lebusmagique.fr/pages/outils-gw2/succes-quotidiens.html " target="_blank"><span class="title">Succès Quotidiens</span></a></li>
 				<li class="high">
-					<a href="#!" target="_blank">
-						<span class="title">Outil 3</span>
-						<span class="subtitle">Subtitle</span>
+					<a href="https://www.lebusmagique.fr/pages/outils-gw2/les-world-boss.html " target="_blank">
+						<span class="title">Timmer World Boss</span>
+						<span class="subtitle">Tyrie Centrale</span>
 					</a>
 				</li>
-				<li><a href="#!" target="_blank"><span class="title">Outil 2</span></a></li>
+				<li><a href="https://event.lebusmagique.fr/ " target="_blank"><span class="title">Evénement</span></a></li>
 				<li class="high">
-					<a href="#!" target="_blank">
-						<span class="title">Outil 4</span>
-						<span class="subtitle">Subtitle</span>
+					<a href="https://www.lebusmagique.fr/pages/outils-gw2/timer-wb-et-hot.html " target="_blank">
+						<span class="title">Timmer World Boss</span>
+						<span class="subtitle">HoT et PoF</span>
 					</a>
 				</li>
-				<li><a href="#!" target="_blank"><span class="title">Outil 5</span></a></li>
-				<li><a href="#!" target="_blank"><span class="title">Outil 6</span></a></li>
-				<li><a href="#!" target="_blank"><span class="title">Outil 7</span></a></li>
-				<li><a href="#!" target="_blank"><span class="title">Outil 8</span></a></li>
+				<li><a href="https://outils.lebusmagique.fr/twitch " target="_blank"><span class="title">Twitch GW2</span>	<span class="subtitle">Découvrez qui stream actuellement du gw2 sur Twitch</span></a></li>
+				<li><a href="https://discord.gg/WRFnwph" target="_blank"><span class="title">Discord</span> <span class="subtitle">Rejoignez nous sur Discord</span></a></li>
+				<li><a href="https://www.lebusmagique.fr/pages/infos/comment-nous-rejoindre.html" target="_blank"><span class="title">Rejoignez la communauté</span> <span class="subtitle">Découvrez comment nous rejoindre</span></a></li>
+				<li class="high">
+					<a href="https://www.lebusmagique.fr/pages/outils-gw2/carte-exploration.html " target="_blank">
+						<span class="title">Carte intéractive</span>
+					</a>
+				</li>
+				<li >
+					<a href="https://www.lebusmagique.fr/pages/outils-gw2/banque-de-materiaux-et-portefeuille.html  " target="_blank">
+						<span class="title">Banque & Portefeuille</span>
+					</a>
+				</li>
+				<li><a href="https://www.lebusmagique.fr/pages/guides/home/l-instance-personnelle.html " target="_blank"><span class="title">Zone personnelle</span>	<span class="subtitle">Découvrez les différentes améliorations possibles pour votre instance personnelle</span></a></li>
+				<li><a href="https://outils.lebusmagique.fr/observatory/" target="_blank"><span class="title">GW2 Observatory</span> <span class="subtitle">L'outils pour vous situez dans le temps</span></a></li>
+				<li class="large" ><a href="https://www.lebusmagique.fr/pages/outils-gw2/decorations-de-hall-de-guilde.html " target="_blank"><span class="title">Décoration de guilde</span> <span class="subtitle">Liste complète & Craft</span></a></li>
 				{#if lastRssTitle && lastRssUrl}
 					<li class="large rss">
 						<a href="{lastRssUrl}" target="_blank">
