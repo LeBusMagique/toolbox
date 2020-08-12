@@ -217,7 +217,7 @@
 				<li><a href="https://www.lebusmagique.fr/pages/infos/comment-nous-rejoindre.html" target="_blank"><span class="title">Rejoignez la communauté</span> <span class="subtitle">Découvrez comment nous rejoindre</span></a></li>
 				<li class="high">
 					<a href="https://www.lebusmagique.fr/pages/outils-gw2/carte-exploration.html " target="_blank">
-						<span class="title">Carte intéractive</span>
+						<span class="title"> <i class="far fa-map"></i>Carte intéractive</span>
 					</a>
 				</li>
 				<li >
