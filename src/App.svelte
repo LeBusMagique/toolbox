@@ -99,7 +99,7 @@
 	#tools {
 		display: grid;
 	  height: 80%;
-	  grid-template-rows: repeat(7, 1fr);
+	  grid-template-rows: repeat(8, 1fr);
 	  grid-template-columns: repeat(2, 1fr);
 	  grid-gap: 1em;
 		max-width: 60em;
@@ -144,10 +144,10 @@
 		padding: .75em 1em;
 		box-sizing: border-box;
 	}
-		#tools li a:hover {
-		  background: #ff1700;
-			border: 3px;
-		}
+
+	#tools li a:hover {
+	  background: #f22516;
+	}
 
 	#tools li a span {
 		display: block;
@@ -165,6 +165,35 @@
 	#tools li a .subtitle {
 		font-weight: normal;
 		font-size: .8em;
+		margin-top:.25em;
+	}
+
+	@media screen and (min-width: 890px) {
+		#tools li:not(.high) a {
+			display: flex;
+			align-self: center;
+		}
+
+		#tools li:not(.high) a img {
+			margin-right: 1em;
+			margin-top: -.25em;
+		}
+
+		#tools li:not(.high) a img,
+		#tools li:not(.high) a span {
+			display: inline;
+			width: auto;
+			margin-bottom: 0;
+		}
+
+		#tools li:first-child a span {
+			width: 100%;
+		}
+	}
+
+	#tools li.high a img {
+		height: 2em;
+    margin-bottom: .75em;
 	}
 
 	@media screen and (max-width: 600px) {
@@ -226,7 +255,6 @@
 					<a href="https://www.lebusmagique.fr/pages/outils-gw2/les-world-boss.html" target="_blank">
 					  <img src="data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhcyIgZGF0YS1pY29uPSJob3VyZ2xhc3MtaGFsZiIgY2xhc3M9InN2Zy1pbmxpbmUtLWZhIGZhLWhvdXJnbGFzcy1oYWxmIGZhLXctMTIiIHJvbGU9ImltZyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMzg0IDUxMiI+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTM2MCAwSDI0QzEwLjc0NSAwIDAgMTAuNzQ1IDAgMjR2MTZjMCAxMy4yNTUgMTAuNzQ1IDI0IDI0IDI0IDAgOTAuOTY1IDUxLjAxNiAxNjcuNzM0IDEyMC44NDIgMTkyQzc1LjAxNiAyODAuMjY2IDI0IDM1Ny4wMzUgMjQgNDQ4Yy0xMy4yNTUgMC0yNCAxMC43NDUtMjQgMjR2MTZjMCAxMy4yNTUgMTAuNzQ1IDI0IDI0IDI0aDMzNmMxMy4yNTUgMCAyNC0xMC43NDUgMjQtMjR2LTE2YzAtMTMuMjU1LTEwLjc0NS0yNC0yNC0yNCAwLTkwLjk2NS01MS4wMTYtMTY3LjczNC0xMjAuODQyLTE5MkMzMDguOTg0IDIzMS43MzQgMzYwIDE1NC45NjUgMzYwIDY0YzEzLjI1NSAwIDI0LTEwLjc0NSAyNC0yNFYyNGMwLTEzLjI1NS0xMC43NDUtMjQtMjQtMjR6bS03NS4wNzggMzg0SDk5LjA4YzE3LjA1OS00Ni43OTcgNTIuMDk2LTgwIDkyLjkyLTgwIDQwLjgyMSAwIDc1Ljg2MiAzMy4xOTYgOTIuOTIyIDgwem0uMDE5LTI1Nkg5OS4wNzhDOTEuOTg4IDEwOC41NDggODggODYuNzQ4IDg4IDY0aDIwOGMwIDIyLjgwNS0zLjk4NyA0NC41ODctMTEuMDU5IDY0eiI+PC9wYXRoPjwvc3ZnPg0K" />
 						<span class="title">Timer des world boss</span>
-						<span class="subtitle">Tyrie Centrale</span>
 					</a>
 				</li>
 				<li class="high">
@@ -240,13 +268,12 @@
 					<a href="https://outils.lebusmagique.fr/twitch" target="_blank">
 					  <img src="data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhYiIgZGF0YS1pY29uPSJ0d2l0Y2giIGNsYXNzPSJzdmctaW5saW5lLS1mYSBmYS10d2l0Y2ggZmEtdy0xNiIgcm9sZT0iaW1nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNMzkxLjE3LDEwMy40N0gzNTIuNTR2MTA5LjdoMzguNjNaTTI4NSwxMDNIMjQ2LjM3VjIxMi43NUgyODVaTTEyMC44MywwLDI0LjMxLDkxLjQyVjQyMC41OEgxNDAuMTRWNTEybDk2LjUzLTkxLjQyaDc3LjI1TDQ4Ny42OSwyNTZWMFpNNDQ5LjA3LDIzNy43NWwtNzcuMjIsNzMuMTJIMjk0LjYxbC02Ny42LDY0di02NEgxNDAuMTRWMzYuNThINDQ5LjA3WiI+PC9wYXRoPjwvc3ZnPg0K" />
 						<span class="title">Guild&nbsp;Wars&nbsp;2 sur Twitch</span>
-						<span class="subtitle">Nos streamers préférés et partenaires</span>
 					</a>
 				</li>
 				<li>
 					<a href="https://discord.gg/WRFnwph" target="_blank">
 					<img src="data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhYiIgZGF0YS1pY29uPSJkaXNjb3JkIiBjbGFzcz0ic3ZnLWlubGluZS0tZmEgZmEtZGlzY29yZCBmYS13LTE0IiByb2xlPSJpbWciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDQ0OCA1MTIiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0yOTcuMjE2IDI0My4yYzAgMTUuNjE2LTExLjUyIDI4LjQxNi0yNi4xMTIgMjguNDE2LTE0LjMzNiAwLTI2LjExMi0xMi44LTI2LjExMi0yOC40MTZzMTEuNTItMjguNDE2IDI2LjExMi0yOC40MTZjMTQuNTkyIDAgMjYuMTEyIDEyLjggMjYuMTEyIDI4LjQxNnptLTExOS41NTItMjguNDE2Yy0xNC41OTIgMC0yNi4xMTIgMTIuOC0yNi4xMTIgMjguNDE2czExLjc3NiAyOC40MTYgMjYuMTEyIDI4LjQxNmMxNC41OTIgMCAyNi4xMTItMTIuOCAyNi4xMTItMjguNDE2LjI1Ni0xNS42MTYtMTEuNTItMjguNDE2LTI2LjExMi0yOC40MTZ6TTQ0OCA1Mi43MzZWNTEyYy02NC40OTQtNTYuOTk0LTQzLjg2OC0zOC4xMjgtMTE4Ljc4NC0xMDcuNzc2bDEzLjU2OCA0Ny4zNkg1Mi40OEMyMy41NTIgNDUxLjU4NCAwIDQyOC4wMzIgMCAzOTguODQ4VjUyLjczNkMwIDIzLjU1MiAyMy41NTIgMCA1Mi40OCAwaDM0My4wNEM0MjQuNDQ4IDAgNDQ4IDIzLjU1MiA0NDggNTIuNzM2em0tNzIuOTYgMjQyLjY4OGMwLTgyLjQzMi0zNi44NjQtMTQ5LjI0OC0zNi44NjQtMTQ5LjI0OC0zNi44NjQtMjcuNjQ4LTcxLjkzNi0yNi44OC03MS45MzYtMjYuODhsLTMuNTg0IDQuMDk2YzQzLjUyIDEzLjMxMiA2My43NDQgMzIuNTEyIDYzLjc0NCAzMi41MTItNjAuODExLTMzLjMyOS0xMzIuMjQ0LTMzLjMzNS0xOTEuMjMyLTcuNDI0LTkuNDcyIDQuMzUyLTE1LjEwNCA3LjQyNC0xNS4xMDQgNy40MjRzMjEuMjQ4LTIwLjIyNCA2Ny4zMjgtMzMuNTM2bC0yLjU2LTMuMDcycy0zNS4wNzItLjc2OC03MS45MzYgMjYuODhjMCAwLTM2Ljg2NCA2Ni44MTYtMzYuODY0IDE0OS4yNDggMCAwIDIxLjUwNCAzNy4xMiA3OC4wOCAzOC45MTIgMCAwIDkuNDcyLTExLjUyIDE3LjE1Mi0yMS4yNDgtMzIuNTEyLTkuNzI4LTQ0LjgtMzAuMjA4LTQ0LjgtMzAuMjA4IDMuNzY2IDIuNjM2IDkuOTc2IDYuMDUzIDEwLjQ5NiA2LjQgNDMuMjEgMjQuMTk4IDEwNC41ODggMzIuMTI2IDE1OS43NDQgOC45NiA4Ljk2LTMuMzI4IDE4Ljk0NC04LjE5MiAyOS40NC0xNS4xMDQgMCAwLTEyLjggMjAuOTkyLTQ2LjMzNiAzMC40NjQgNy42OCA5LjcyOCAxNi44OTYgMjAuNzM2IDE2Ljg5NiAyMC43MzYgNTYuNTc2LTEuNzkyIDc4LjMzNi0zOC45MTIgNzguMzM2LTM4LjkxMnoiPjwvcGF0aD48L3N2Zz4NCg==" />
-						<span class="title">  Serveur Discord du Bus Magique</span>
+						<span class="title">Discord du Bus Magique</span>
 					</a>
 				</li>
 				<li>
@@ -271,22 +298,13 @@
 				<li>
 					<a href="https://www.lebusmagique.fr/pages/guides/home/l-instance-personnelle.html" target="_blank">
 					  <img src="data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhcyIgZGF0YS1pY29uPSJob21lIiBjbGFzcz0ic3ZnLWlubGluZS0tZmEgZmEtaG9tZSBmYS13LTE4IiByb2xlPSJpbWciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDU3NiA1MTIiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik0yODAuMzcgMTQ4LjI2TDk2IDMwMC4xMVY0NjRhMTYgMTYgMCAwIDAgMTYgMTZsMTEyLjA2LS4yOWExNiAxNiAwIDAgMCAxNS45Mi0xNlYzNjhhMTYgMTYgMCAwIDEgMTYtMTZoNjRhMTYgMTYgMCAwIDEgMTYgMTZ2OTUuNjRhMTYgMTYgMCAwIDAgMTYgMTYuMDVMNDY0IDQ4MGExNiAxNiAwIDAgMCAxNi0xNlYzMDBMMjk1LjY3IDE0OC4yNmExMi4xOSAxMi4xOSAwIDAgMC0xNS4zIDB6TTU3MS42IDI1MS40N0w0ODggMTgyLjU2VjQ0LjA1YTEyIDEyIDAgMCAwLTEyLTEyaC01NmExMiAxMiAwIDAgMC0xMiAxMnY3Mi42MUwzMTguNDcgNDNhNDggNDggMCAwIDAtNjEgMEw0LjM0IDI1MS40N2ExMiAxMiAwIDAgMC0xLjYgMTYuOWwyNS41IDMxQTEyIDEyIDAgMCAwIDQ1LjE1IDMwMWwyMzUuMjItMTkzLjc0YTEyLjE5IDEyLjE5IDAgMCAxIDE1LjMgMEw1MzAuOSAzMDFhMTIgMTIgMCAwIDAgMTYuOS0xLjZsMjUuNS0zMWExMiAxMiAwIDAgMC0xLjctMTYuOTN6Ij48L3BhdGg+PC9zdmc+DQo=" />
-						<span class="title">Instance personnelle</span>
-						<span class="subtitle">Améliorez votre zone personnelle</span>
+						<span class="title">Améliorez votre instance personnelle</span>
 					</a>
 				</li>
 				<li>
-					<a href="https://outils.lebusmagique.fr/observatory/" target="_blank">
-					  <img src="data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhcyIgZGF0YS1pY29uPSJoaXN0b3J5IiBjbGFzcz0ic3ZnLWlubGluZS0tZmEgZmEtaGlzdG9yeSBmYS13LTE2IiByb2xlPSJpbWciIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDUxMiA1MTIiPjxwYXRoIGZpbGw9IiNmZmZmZmYiIGQ9Ik01MDQgMjU1LjUzMWMuMjUzIDEzNi42NC0xMTEuMTggMjQ4LjM3Mi0yNDcuODIgMjQ4LjQ2OC01OS4wMTUuMDQyLTExMy4yMjMtMjAuNTMtMTU1LjgyMi01NC45MTEtMTEuMDc3LTguOTQtMTEuOTA1LTI1LjU0MS0xLjgzOS0zNS42MDdsMTEuMjY3LTExLjI2N2M4LjYwOS04LjYwOSAyMi4zNTMtOS41NTEgMzEuODkxLTEuOTg0QzE3My4wNjIgNDI1LjEzNSAyMTIuNzgxIDQ0MCAyNTYgNDQwYzEwMS43MDUgMCAxODQtODIuMzExIDE4NC0xODQgMC0xMDEuNzA1LTgyLjMxMS0xODQtMTg0LTE4NC00OC44MTQgMC05My4xNDkgMTguOTY5LTEyNi4wNjggNDkuOTMybDUwLjc1NCA1MC43NTRjMTAuMDggMTAuMDggMi45NDEgMjcuMzE0LTExLjMxMyAyNy4zMTRIMjRjLTguODM3IDAtMTYtNy4xNjMtMTYtMTZWMzguNjI3YzAtMTQuMjU0IDE3LjIzNC0yMS4zOTMgMjcuMzE0LTExLjMxNGw0OS4zNzIgNDkuMzcyQzEyOS4yMDkgMzQuMTM2IDE4OS41NTIgOCAyNTYgOGMxMzYuODEgMCAyNDcuNzQ3IDExMC43OCAyNDggMjQ3LjUzMXptLTE4MC45MTIgNzguNzg0bDkuODIzLTEyLjYzYzguMTM4LTEwLjQ2MyA2LjI1My0yNS41NDItNC4yMS0zMy42NzlMMjg4IDI1Ni4zNDlWMTUyYzAtMTMuMjU1LTEwLjc0NS0yNC0yNC0yNGgtMTZjLTEzLjI1NSAwLTI0IDEwLjc0NS0yNCAyNHYxMzUuNjUxbDY1LjQwOSA1MC44NzRjMTAuNDYzIDguMTM3IDI1LjU0MSA2LjI1MyAzMy42NzktNC4yMXoiPjwvcGF0aD48L3N2Zz4NCg==" />
-						<span class="title">GW2 Observatory</span>
-						<span class="subtitle">Remontez la chronologie de vos personnages</span>
-					</a>
-				</li>
-				<li class="large">
 					<a href="https://www.lebusmagique.fr/pages/outils-gw2/decorations-de-hall-de-guilde.html" target="_blank">
 					  <img src="data:image/svg+xml;base64,PHN2ZyBhcmlhLWhpZGRlbj0idHJ1ZSIgZm9jdXNhYmxlPSJmYWxzZSIgZGF0YS1wcmVmaXg9ImZhcyIgZGF0YS1pY29uPSJwdXp6bGUtcGllY2UiIGNsYXNzPSJzdmctaW5saW5lLS1mYSBmYS1wdXp6bGUtcGllY2UgZmEtdy0xOCIgcm9sZT0iaW1nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NzYgNTEyIj48cGF0aCBmaWxsPSIjZmZmZmZmIiBkPSJNNTE5LjQ0MiAyODguNjUxYy00MS41MTkgMC01OS41IDMxLjU5My04Mi4wNTggMzEuNTkzQzM3Ny40MDkgMzIwLjI0NCA0MzIgMTQ0IDQzMiAxNDRzLTE5Ni4yODggODAtMTk2LjI4OC0zLjI5N2MwLTM1LjgyNyAzNi4yODgtNDYuMjUgMzYuMjg4LTg1Ljk4NUMyNzIgMTkuMjE2IDI0My44ODUgMCAyMTAuNTM5IDBjLTM0LjY1NCAwLTY2LjM2NiAxOC44OTEtNjYuMzY2IDU2LjM0NiAwIDQxLjM2NCAzMS43MTEgNTkuMjc3IDMxLjcxMSA4MS43NUMxNzUuODg1IDIwNy43MTkgMCAxNjYuNzU4IDAgMTY2Ljc1OHYzMzMuMjM3czE3OC42MzUgNDEuMDQ3IDE3OC42MzUtMjguNjYyYzAtMjIuNDczLTQwLTQwLjEwNy00MC04MS40NzEgMC0zNy40NTYgMjkuMjUtNTYuMzQ2IDYzLjU3Ny01Ni4zNDYgMzMuNjczIDAgNjEuNzg4IDE5LjIxNiA2MS43ODggNTQuNzE3IDAgMzkuNzM1LTM2LjI4OCA1MC4xNTgtMzYuMjg4IDg1Ljk4NSAwIDYwLjgwMyAxMjkuNjc1IDI1LjczIDE4MS4yMyAyNS43MyAwIDAtMzQuNzI1LTEyMC4xMDEgMjUuODI3LTEyMC4xMDEgMzUuOTYyIDAgNDYuNDIzIDM2LjE1MiA4Ni4zMDggMzYuMTUyQzU1Ni43MTIgNDE2IDU3NiAzODcuOTkgNTc2IDM1NC40NDNjMC0zNC4xOTktMTguOTYyLTY1Ljc5Mi01Ni41NTgtNjUuNzkyeiI+PC9wYXRoPjwvc3ZnPg0K" />
 						<span class="title">Décorations de hall de guilde</span>
-						<span class="subtitle">Aperçus, recettes et listes d'ingrédients</span>
 					</a>
 				</li>
 				{#if lastRssTitle && lastRssUrl}
