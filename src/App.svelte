@@ -145,7 +145,8 @@
 		box-sizing: border-box;
 	}
 		#tools li a:hover {
-			border: 4px solid  #6f69bf;
+		  background: #ff1700;
+			border: 3px;
 		}
 
 	#tools li a span {
